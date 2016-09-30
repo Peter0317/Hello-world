@@ -1,0 +1,14 @@
+int main(int argc, const char * argv[])
+{
+    
+    @autoreleasepool {
+    static void (^ const blocks)(int) = ^(int i)
+        {
+            if (i > 0) {
+                NSLog(@"num: %d",i);
+                blocks(i-1);
+            }
+        };
+        blocks(3);
+    }
+}
