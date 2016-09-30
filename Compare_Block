@@ -1,0 +1,16 @@
+int main(int argc, const char * argv[])
+{
+    
+    @autoreleasepool {
+        NSArray *stringArray = [NSArray arrayWithObjects:@"egg", @"apple", @"bananner",@"purple",@"orange",@"approve",nil];
+        NSComparator sortBlock = ^(id string1, id string2)
+        {
+            NSLog(@" string1 is %@ and string2 is %@\n",string1,string2);
+            return [string1 compare:string2];
+        };
+        NSArray *sortArray = [stringArray sortedArrayUsingComparator:sortBlock];
+        NSLog(@"sortArray:%@", sortArray);
+        
+    }
+    return 0;
+}
